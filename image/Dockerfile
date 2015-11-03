@@ -12,7 +12,7 @@ RUN adduser vagrant
 # Change default password for user "vagrant"
 RUN usermod -p $(perl -e 'print crypt("vagrant","\$6\$xx\$")') vagrant
 # Allow user "vagrant" to become root without entering a password
-RUN install -m 440 /build/etc_sudoers.d_vagrant /etc/sudoers.d/vagrant
+RUN install -m 440 /bd_build/etc_sudoers.d_vagrant /etc/sudoers.d/vagrant
 
 # Create mountpoint for Vagrant synced folder
 RUN mkdir -p /vagrant
